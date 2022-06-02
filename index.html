@@ -22,6 +22,11 @@ branch.logEvent(
     custom_data,
 function(err) { console.log(err); }
 );
+	  const myTimeout = setTimeout(closeJourney, 5000);
+	  
+	  function closeJourney(){
+  branch.closeJourney();
+}
 	</script>
 </head>
 <body>
