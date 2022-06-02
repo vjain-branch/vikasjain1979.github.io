@@ -4,6 +4,8 @@
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <script>
+    const myTimeout = setTimeout(closeJourney, 5000);
+
 	  var custom_data = {
    "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
    "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
@@ -22,6 +24,10 @@ branch.logEvent(
     custom_data,
 function(err) { console.log(err); }
 );
+
+function closeJourney(){
+  branch.closeJourney();
+}
 	</script>
 </head>
 <body>
