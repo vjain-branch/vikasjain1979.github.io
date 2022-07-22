@@ -17,9 +17,11 @@
     branch.setBranchViewData({data: {
       'test': 'DynamicVal',
       'title': 'Dynamic',
-      'utm_campaign':'test-campaign',
       'utm_medium':'test-medium',
-      '$deeplink_no_attribution':'true'
+      '$deeplink_no_attribution':'true',
+      '~campaign':'test-campaign',
+	    	    '~feature':'test-journey',
+	    	    '~channel':'test-channel',
     }});
 
 branch.logEvent(
