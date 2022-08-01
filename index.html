@@ -4,7 +4,6 @@
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <script>
-    const myTimeout = setTimeout(closeJourney, 5000);
 
 	  var custom_data = {
    "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
@@ -15,7 +14,9 @@
     validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
     // init Branch
     branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z');
-	
+	  branch.track('pageview', {
+'delay': '10'
+});
     branch.setBranchViewData({data: {
       'test': 'DynamicVal',
       'title': 'Dynamic',
