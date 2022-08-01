@@ -15,6 +15,9 @@
     validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
     // init Branch
     branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z');
+	  branch.track('pageview', {
+'delay': '10'
+});
     branch.setBranchViewData({data: {
       'test': 'DynamicVal',
       'title': 'Dynamic',
@@ -33,9 +36,7 @@ branch.logEvent(
     custom_data,
 function(err) { console.log(err); }
 );
-branch.track('pageview', {
-'delay': '10'
-});
+
 	</script>
 </head>
 <body>
