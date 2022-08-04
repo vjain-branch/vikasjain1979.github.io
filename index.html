@@ -41,7 +41,11 @@
     '$og_image_url':'http://lorempixel.com/400/400'
   }
 };
-    branch.setBranchViewData(linkData);
+	  
+	  branch.link(linkData, function(err, link) {
+  console.log(link);
+});
+//     branch.setBranchViewData(linkData);
 	 
 // 	branch.setBranchViewData({$
 // 	'channel' : new URL(window.location.href).searchParams.get("utm_source"),
