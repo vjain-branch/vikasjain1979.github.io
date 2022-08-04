@@ -15,24 +15,23 @@
 	branch.track('pageview', {'delay': '10000'});
 //   branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z');
 	branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z', { 
-    metadata : { 
-		'~feature' : new URL(window.location.href).searchParams.get("utm_medium"),
-		'~channel' : new URL(window.location.href).searchParams.get("utm_source"),
-		'~campaign' : new URL(window.location.href).searchParams.get("utm_campaign")
+		'feature' : new URL(window.location.href).searchParams.get("utm_medium"),
+		'channel' : new URL(window.location.href).searchParams.get("utm_source"),
+		'campaign' : new URL(window.location.href).searchParams.get("utm_campaign")
 	}	
 });
 
 	
-    branch.setBranchViewData({data: {
-      'test': 'DynamicVal',
-      'title': 'Dynamic'
-    }});
+//     branch.setBranchViewData({data: {
+//       'test': 'DynamicVal',
+//       'title': 'Dynamic'
+//     }});
 	 
-	branch.setBranchViewData({
-	'channel' : new URL(window.location.href).searchParams.get("utm_source"),
-		'campaign' : new URL(window.location.href).searchParams.get("utm_campaign")
+// 	branch.setBranchViewData({
+// 	'channel' : new URL(window.location.href).searchParams.get("utm_source"),
+// 		'campaign' : new URL(window.location.href).searchParams.get("utm_campaign")
 	
-    });
+//     });
 
 branch.logEvent(
 	"COMPLETE_REGISTRATION",
