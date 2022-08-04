@@ -25,9 +25,9 @@
 // 		    });
 
 	var linkData = {
-  campaign: 'content 123',
-  channel: 'test-channel',
-  feature: 'test-feature',
+  ~campaign: 'content 123',
+  ~channel: 'test-channel',
+  ~feature: 'test-feature',
    make_new_link: true,
   stage: 'new user',
   tags: [ utmcampaign ],
@@ -41,11 +41,7 @@
     '$og_image_url':'http://lorempixel.com/400/400'
   }
 };
-	  
-	  branch.link(linkData, function(err, link) {
-  console.log(link);
-});
-//     branch.setBranchViewData(linkData);
+    branch.setBranchViewData(linkData);
 	 
 // 	branch.setBranchViewData({$
 // 	'channel' : new URL(window.location.href).searchParams.get("utm_source"),
