@@ -14,6 +14,7 @@
          // init Branch
 	branch.track('pageview', {'delay': '10000'});
   branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z');
+	  var utmcampaign = new URL(window.location.href).searchParams.get("utm_campaign") 
 // 	branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z', { 
 // 		journey_link_data: {
 // 		feature : new URL(window.location.href).searchParams.get("utm_medium"),
@@ -29,7 +30,7 @@
   feature: 'test-feature',
    make_new_link: true,
   stage: 'new user',
-  tags: [ 'tag1', 'tag2', 'tag3' ],
+  tags: [ utmcampaign ],
   alias: '',
   data: {
     'custom_bool': true,
