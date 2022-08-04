@@ -16,9 +16,10 @@
 //   branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z');
 	branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z', { 
 		journey_link_data: {
-		'~feature' : new URL(window.location.href).searchParams.get("utm_medium"),
-		'~channel' : new URL(window.location.href).searchParams.get("utm_source"),
-		'~campaign' : new URL(window.location.href).searchParams.get("utm_campaign")
+		feature : new URL(window.location.href).searchParams.get("utm_medium"),
+		channel : new URL(window.location.href).searchParams.get("utm_source"),
+		campaign : new URL(window.location.href).searchParams.get("utm_campaign"),
+			tags: [new URL(window.location.href).searchParams.get("utm_campaign")]
 	}	
 		    });
 
