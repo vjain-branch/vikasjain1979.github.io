@@ -22,11 +22,23 @@
 	}	
 		    });
 
-	
-    branch.setBranchViewData({tags: {
-      'test': 'DynamicVal',
-      'title': 'Dynamic'
-    }});
+	var linkData = {
+  campaign: 'content 123',
+  channel: 'test-channel',
+  feature: 'test-feature',
+  stage: 'new user',
+  tags: [ 'tag1', 'tag2', 'tag3' ],
+  alias: '',
+  data: {
+    'custom_bool': true,
+    'custom_int': Date.now(),
+    'custom_string': 'hello',
+    '$og_title': 'Title',
+    '$og_description': 'Description',
+    '$og_image_url':'http://lorempixel.com/400/400'
+  }
+};
+    branch.setBranchViewData(linkData);
 	 
 // 	branch.setBranchViewData({
 // 	'channel' : new URL(window.location.href).searchParams.get("utm_source"),
