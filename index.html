@@ -28,11 +28,11 @@
       'title': 'Dynamic'
     }});
 	 
-	branch.setBranchViewData({journey_link_data: {
+	branch.setBranchViewData({
 	'~channel' : new URL(window.location.href).searchParams.get("utm_source"),
 		'~campaign' : new URL(window.location.href).searchParams.get("utm_campaign")
 	
-    }});
+    });
 
 branch.logEvent(
 	"COMPLETE_REGISTRATION",
