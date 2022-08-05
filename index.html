@@ -24,24 +24,10 @@
 // 	}	
 // 		    });
 
-	var linkData = {
-  'campaign': 'content 123',
-  'channel': 'test-channel',
-  feature: 'test-feature',
-   make_new_link: true,
-  stage: 'new user',
-  tags: [ utmcampaign ],
-  alias: '',
-  data: {
-    'custom_bool': true,
-    'custom_int': Date.now(),
-    'custom_string': 'hello',
-    '$og_title': 'Title',
-    '$og_description': 'Description',
-    '$og_image_url':'http://lorempixel.com/400/400'
-  }
-};
-    branch.setBranchViewData(linkData);
+// 	var linkData = {
+//   tags: [ utmcampaign ]
+// };
+    branch.setBranchViewData({tags: [ utmcampaign]});
 	 
 // 	branch.setBranchViewData({$
 // 	'channel' : new URL(window.location.href).searchParams.get("utm_source"),
