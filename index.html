@@ -19,7 +19,7 @@
 	  var utmmedium = new URL(window.location.href).searchParams.get("utm_medium");
 	  var utmsoource = new URL(window.location.href).searchParams.get("utm_source");
 	  	  
-       branch.setBranchViewData({data: {'$journeys_cta': 'https://branchexplore.test-app.link/E4ylZXPfUpb?~channel='+ utmmedium +'&~campaign='+ utmcampaign +'&~feature='+ utmsource +', '$deeplink_no_attribution':'true' }});
+       branch.setBranchViewData({data: {'$journeys_cta': 'https://branchexplore.test-app.link/E4ylZXPfUpb?~channel='+ (utmmedium) +'&~campaign='+ (utmcampaign) +'&~feature='+ (utmsource) +', '$deeplink_no_attribution':'true' }});
 // 	  branch.setBranchViewData({tags: [ utmcampaign]});
 	 
 // 	branch.setBranchViewData({$
