@@ -44,9 +44,34 @@ var isAndroidWebView = /; wv\)/.test(navigator.userAgent);
 var isWebView = isiOSWebView || isAndroidWebView;
 
 	  if (isWebView) {
+		  var event_and_custom_data = {
+                   "transaction_id": "tras_Id_1234",
+                   "description": "Mobile App purchase"
+                };
+
+                var customer_event_alias = "Mobile_App";
+
+                branch.logEvent(
+                   "Purchase_APP",
+                   event_and_custom_data,
+                   customer_event_alias,
+                   function(err) { console.log(err); }
+                );
 		  alert('WebView');
 	  } else {
-		  alert('MobileWeb');
+		var event_and_custom_data = {
+                   "transaction_id": "tras_Id_1234",
+                   "description": "Mobile Web purchase"
+                };
+
+                var customer_event_alias = "Mobile_Web";
+
+                branch.logEvent(
+                   "Purchase_WEB",
+                   event_and_custom_data,
+                   customer_event_alias,
+                   function(err) { console.log(err); }
+                );
 	  }
 
 	</script>
