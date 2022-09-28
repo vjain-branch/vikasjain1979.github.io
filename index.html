@@ -47,7 +47,8 @@ var isWebView = isiOSWebView || isAndroidWebView;
 		  var event_and_custom_data = {
                    "transaction_id": "tras_Id_1234",
                    "description": "Mobile App purchase",
-			  "$platform": "IOS_APP"
+			  "$platform": "IOS_APP",
+			  "customer_event_alias" = "Mobile_App"
                 };
 
                 var customer_event_alias = "Mobile_App";
@@ -62,7 +63,8 @@ var isWebView = isiOSWebView || isAndroidWebView;
 	  } else {
 		var event_and_custom_data = {
                    "transaction_id": "tras_Id_1234",
-                   "description": "Mobile Web purchase"
+                   "description": "Mobile Web purchase",
+			"customer_event_alias" = "Mobile_Web"
                 };
 
                 var customer_event_alias = "Mobile_Web";
