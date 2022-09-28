@@ -34,6 +34,20 @@ branch.logEvent(
     custom_data,
 function(err) { console.log(err); }
 );
+	  
+	  //Check iOS Webview:
+var isiOSWebView = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Version)/i.test(navigator.userAgent);
+
+//Check Android Webview: Per Chrome Android docs - https://developer.chrome.com/docs/multidevice/user-agent/
+var isAndroidWebView = /; wv\)/.test(navigator.userAgent);
+
+var isWebView = isiOSWebView || isAndroidWebView;
+
+	  if (isWebView) {
+		  alert('WebView');
+	  } else {
+		  	  alert('MobileWeb');
+	  }
 
 	</script>
 </head>
