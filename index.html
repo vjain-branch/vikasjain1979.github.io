@@ -52,7 +52,7 @@ var isWebView = isiOSWebView || isAndroidWebView;
                 var customer_event_alias = "Mobile_App";
 
                 branch.logEvent(
-                   "Purchase_APP",
+                   "PURCHASE",
                    event_and_custom_data,
                    customer_event_alias,
                    function(err) { console.log(err); }
@@ -67,7 +67,7 @@ var isWebView = isiOSWebView || isAndroidWebView;
                 var customer_event_alias = "Mobile_Web";
 
                 branch.logEvent(
-                   "Purchase_WEB",
+                   "PURCHASE",
                    event_and_custom_data,
                    customer_event_alias,
                    function(err) { console.log(err); }
