@@ -45,8 +45,10 @@ var isAndroidWebView = /; wv\)/.test(navigator.userAgent);
 var isWebView = isiOSWebView || isAndroidWebView;
 
 	  if (isWebView) {
+		  console.log('Its a webview');
 		  alert('WebView');
 	  } else {
+		  		  console.log('Its a mobileweb');
 		  	  alert('MobileWeb');
 	  }
 
