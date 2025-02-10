@@ -88,6 +88,12 @@ function(err) { console.log(err); }
 	  
 	  function onTrack() {
 		var id = document.getElementById("track").value;
+		   branch.logEvent(
+                   "Track",
+                   event_and_custom_data,
+                   customer_event_alias,
+                   function(err) { console.log(err); }
+                );
 		  alert(id);
 	  }
 	</script>
