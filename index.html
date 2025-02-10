@@ -87,6 +87,20 @@ function(err) { console.log(err); }
 
 	  
 	  function onTrack() {
+		  var event_and_custom_data = {
+                   "transaction_id": "tras_Id_1234",
+                   "description": "Mobile Web purchase",
+			"customer_event_alias": "Mobile_Web"
+                };
+
+                var customer_event_alias = "track";
+
+                branch.logEvent(
+                   "track",
+                   event_and_custom_data,
+                   customer_event_alias,
+                   function(err) { console.log(err); }
+                );
 		var id = document.getElementById("track").value;
 		  alert(id);
 	  }
