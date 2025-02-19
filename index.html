@@ -26,7 +26,12 @@ var isWebView = isiOSWebView || isAndroidWebView;
 // 		  // init Branch
 // 	  branch.init('key_live_jl1s6ftuDpPrMM1uN6Dekacgqshcyl2S',  { 'no_journeys': true } );
 // } else {
-	branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z');
+	 branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z', {'no_journeys':true}, function(err, data) {
+			if (err) {
+				let alertMessage = err.message;
+				alert(alertMessage);
+			}
+		  });
 	  //branch.init( 'BRANCH_KEY', {‘tracking_disabled’ : true});
 // }
 // 	  var utmcampaign = new URL(window.location.href).searchParams.get("utm_campaign");
@@ -103,6 +108,31 @@ function(err) { console.log(err); }
                 );
 		var id = document.getElementById("track").value;
 		  alert(id);
+	  }
+
+	  function onLogin() {
+		//Set Branch SDK No Journeys as false
+	  	branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z', {'no_journeys':false}, function(err, data) {
+			if (err) {
+				let alertMessage = err.message;
+				alert(alertMessage);
+			}
+		});
+
+		  // Call pageview event
+		  branch.track('pageview');
+	  }
+
+	  function onLogout() {
+		  //Set Branch SDK No Journeys as true
+		  branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z', {'no_journeys':true}, function(err, data) {
+			if (err) {
+				let alertMessage = err.message;
+				alert(alertMessage);
+			}
+		  });
+		  // Call pageview event
+		  branch.track('pageview');
 	  }
 	</script>
 </head>
