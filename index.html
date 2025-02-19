@@ -133,6 +133,7 @@ function(err) { console.log(err); }
 		  });
 		  // Call pageview event
 		  branch.track('pageview');
+		  branch.closeJourney(function(err) { console.log(err); });
 	  }
 	</script>
 </head>
