@@ -142,6 +142,17 @@ function(err) { console.log(err); }
 		var id = document.getElementById("track").value;
 		  alert(id);
 	  }
+
+	  function sendMessage(payload) {
+            // Check if the message handler exists
+            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.nativeProcess) {
+                // 'myApp' is the name we registered in Swift
+                window.webkit.messageHandlers.nativeProcess.postMessage(payload);
+            } else {
+                console.log("Native message handler 'nativeProcess' not found.");
+                alert("This functionality is only available in the native iOS app.");
+            }
+        }
 	</script>
 </head>
 <body>
@@ -191,7 +202,7 @@ function myFunction() {
 		<input type="text" id="track" name="track" maxlength="16">
 <div>
 <!-- 	<img src="ap_qrcode.jpeg" height="10" width="10"/>  -->
-	<button onclick="onTrack()"> Track Parcel </button> 
+	<button onclick="sendMessage('https://branchexplore.test-app.link/VqnpqpRfUpb')"> Track Parcel </button> 
      <a href="https://branchexplore.test-app.link/track">Track Parcel</a><br>
 
 	
