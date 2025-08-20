@@ -15,14 +15,32 @@
     var utmsource = new URL(window.location.href).searchParams.get("utm_source");
     
     //branch.setBranchViewData({data: {'$journeys_cta': 'https://branchexplore.test-app.link/ARWY6c66TRb?~channel='+ utmmedium +'&~campaign='+ utmcampaign +'&~feature='+ utmsource + '&$deeplink_no_attribution=true' }});
+var linkData = {
+  campaign: 'content 123',
+  channel: 'facebook',
+  feature: 'dashboard',
+  stage: 'new user',
+  tags: [ 'tag1', 'tag2', 'tag3' ],
+  alias: '',
+  data: {
+    'custom_bool': true,
+    'custom_int': Date.now(),
+    'custom_string': 'hello',
+    '$og_title': 'Title',
+    '$og_description': 'Description',
+    '$og_image_url':'http://lorempixel.com/400/400'
+  }
+};
 
-	branch.setBranchViewData({data: { param1:'fbclid123',
-									param2: 'gclid123'} });
+// Set Branch Deep Link data dynamically for a given mobile web Journey
+branch.setBranchViewData(linkData);
+	//branch.setBranchViewData({data: { param1:'fbclid123',
+		//							param2: 'gclid123'} });
 	
 	</script>
 </head>
 <body>
-<h1>Test Journey Attribution 20AugN1</h1>
+<h1>Test Journey Attribution 21Aug</h1>
 <p>GitHub Pages.</p>
 
 </body>
