@@ -14,12 +14,12 @@
     var utmmedium = new URL(window.location.href).searchParams.get("utm_medium");
     var utmsource = new URL(window.location.href).searchParams.get("utm_source");
     
-    branch.setBranchViewData({data: {'$journeys_cta': 'https://branchexplore.test-app.link/ARWY6c66TRb?~channel='+ utmmedium +'&~campaign='+ utmcampaign +'&~feature='+ utmsource +'' }});
+    branch.setBranchViewData({data: {'$journeys_cta': 'https://branchexplore.test-app.link/ARWY6c66TRb?~channel='+ utmmedium +'&~campaign='+ utmcampaign +'&~feature='+ utmsource + '&$deeplink_no_attribution=true' }});
 	
 	</script>
 </head>
 <body>
-<h1>Test Journey Attribution 20AugNew</h1>
+<h1>Test Journey Attribution 20Aug</h1>
 <p>GitHub Pages.</p>
 
 </body>
