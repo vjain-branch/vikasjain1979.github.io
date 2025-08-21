@@ -1,93 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep Link Webview</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            margin-top: 20px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Link Buttons</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      text-decoration: none;
+      color: white;
+      background-color: #007BFF;
+      border: 1px solid #007BFF;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body>
 
-    <div id="main-content" class="container">
-        <h1>Loading...</h1>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Placeholder deep links and fallbacks
-            const androidDeepLink = 'your-android-app://path/to/content';
-            const iosDeepLink = 'your-ios-app://path/to/content';
-            const androidFallback = 'https://play.google.com/store/apps/details?id=com.yourcompany.yourapp';
-            const iosFallback = 'https://apps.apple.com/us/app/your-app-name/id123456789';
-
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            const contentDiv = document.getElementById('main-content');
-
-            function handleFallback(osFallbackUrl) {
-                // A timeout to check if the app launched. If not, redirect to the app store.
-                // This is a best practice for deep linking.
-                setTimeout(function() {
-                    window.location.href = osFallbackUrl;
-                }, 1000);
-            }
-
-            function redirect(deepLink, osFallback) {
-                window.location.href = deepLink;
-                handleFallback(osFallback);
-            }
-
-            // --- Main Logic ---
-
-            if (/android/i.test(userAgent)) {
-                // User is on Android: Autoredirect to the app
-                contentDiv.innerHTML = '<h1>Redirecting to the App...</h1>';
-                redirect(androidDeepLink, androidFallback);
-            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                // User is on iOS: Show a button to click
-                contentDiv.innerHTML = `
-                    <h1>Open the App</h1>
-                    <p>Click the button below to be redirected to the app. If the app is not installed, you will be taken to the App Store.</p>
-                    <a href="${iosDeepLink}" class="button">Open My App</a>
-                `;
-            } else {
-                // User is on another OS (e.g., Desktop)
-                contentDiv.innerHTML = '<h1>Visit our Website</h1><p>You are on a desktop or unsupported device. Please visit our main website or download our app from the app store.</p>';
-            }
-        });
-    </script>
+  <div class="button-container">
+    <a href="https://www.google.com" class="button">Go to Google</a>
+    <a href="https://www.example.com" class="button">Go to Example</a>
+  </div>
 
 </body>
 </html>
