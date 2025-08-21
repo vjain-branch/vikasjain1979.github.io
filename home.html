@@ -23,10 +23,7 @@ var linkData = {
   tags: [ 'tag1', 'tag2', 'tag3' ],
   alias: '',
   data: {
-    'custom_bool': true,
-    'custom_int': Date.now(),
-    'custom_string': 'hello',
-	'$journeys_cta': 'https://branchexplore.test-app.link/ARWY6c66TRb?~channel='+ utmmedium +'&~campaign='+ utmcampaign +'&~feature='+ utmsource + '&$deeplink_no_attribution=true'
+	'$journeys_cta': 'https://branchexplore.test-app.link/ARWY6c66TRb?~channel='+ utmmedium +'&~campaign='+ utmcampaign +'&~feature='+ utmsource + '&$deeplink_no_attribution=true&custom_string=hello&custom_int=1234'
   }
 };
 
@@ -38,7 +35,7 @@ branch.setBranchViewData(linkData);
 	</script>
 </head>
 <body>
-<h1>Test Journey Attribution 21Aug01</h1>
+<h1>Test Journey Attribution 21Aug02</h1>
 <p>GitHub Pages.</p>
 
 </body>
