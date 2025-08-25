@@ -38,7 +38,7 @@
   </style>
 </head>
 <body>
-<h1>Toko Links 25/8</h1>
+<h1>Toko Links 25/8 - v1</h1>
   <div class="button-container">
     
     <a href="https://www.google.com" class="button">DeepLink for Android</a>
@@ -55,10 +55,11 @@
                 // If it's an Android device, redirect to Google
                 window.location.href = googleLink;
             }
-
+            
+            window.location.href = googleLink;
             // 1. Get the button element using its ID
             //const buttonElement = document.getElementById('iosButton');
-            autoTapButton('iosButton')
+            //autoTapButton('iosButton')
             // Optional: Define the action that should happen when clicked
             // buttonElement.addEventListener('click', function() {
             //     const messageElement = document.getElementById('message');
