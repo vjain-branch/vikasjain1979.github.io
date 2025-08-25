@@ -44,19 +44,19 @@
     <a href="https://tokopedia.link/6Eal7jYt0Vb" class="button" id="iosButton">Deeplink for IOS</a>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Check if the user agent string contains "Android"
-      const isAndroid = /android/i.test(navigator.userAgent);
-      const googleLink = 'https://tokopedia.link/6Eal7jYt0Vb';
+< script >
+    document.addEventListener('DOMContentLoaded', function() {
+            // Check if the user agent string contains "Android"
+            const isAndroid = /android/i.test(navigator.userAgent);
+            const googleLink = 'https://tokopedia.link/6Eal7jYt0Vb';
 
-      if (isAndroid) {
-        // If it's an Android device, redirect to Google
-        window.location.href = googleLink;
-      }
-      
-        // 1. Get the button element using its ID
-      const buttonElement = document.getElementById('iosButton');
+            if (isAndroid) {
+                // If it's an Android device, redirect to Google
+                window.location.href = googleLink;
+            }
+
+            // 1. Get the button element using its ID
+            const buttonElement = document.getElementById('iosButton');
 
             // Optional: Define the action that should happen when clicked
             // buttonElement.addEventListener('click', function() {
@@ -66,26 +66,17 @@
 
             // 2. Automatically "click" the button
             //buttonElement.click();
-        //});
+            //});
 
-    // 4. Append the element to the document (necessary for some browsers to allow the click)
-    document.body.appendChild(link);
+        // Example 1: Tap to open a deep link (mimics tapping a Universal Link)
+        mimicTapOnLink('tokopedia://');
 
-    // 5. Mimic the user "tap" by calling the click() method
-    link.click();
-
-    // 6. Clean up by removing the temporary link from the DOM
-    document.body.removeChild(link);
-}
-
-// Example 1: Tap to open a deep link (mimics tapping a Universal Link)
-mimicTapOnLink('tokopedia://');
-
-// Example 2: Tap to open a new website in a new tab
-mimicTapOnLink('https://www.example.com', true);
+        // Example 2: Tap to open a new website in a new tab
+        mimicTapOnLink('https://www.example.com', true);
     });
 
-           function mimicTapOnLink(url, openInNewTab = false) {
+function mimicTapOnLink(url, openInNewTab = false) {
+      alert('mimicTapOnLikn Function Called')
     // 1. Create a hidden, temporary link element (anchor tag)
     const link = document.createElement('a');
 
@@ -97,8 +88,17 @@ mimicTapOnLink('https://www.example.com', true);
         link.target = '_blank';
         // Security best practice for opening new tabs
         link.rel = 'noopener noreferrer';
-    }
-  </script>
+    } 
+
+      // 4. Append the element to the document (necessary for some browsers to allow the click)
+      document.body.appendChild(link);
+            // 5. Mimic the user "tap" by calling the click() method
+            link.click();
+
+            // 6. Clean up by removing the temporary link from the DOM
+            document.body.removeChild(link);
+        }
+</script>
 
 </body>
 </html>
