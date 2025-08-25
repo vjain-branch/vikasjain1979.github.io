@@ -38,7 +38,7 @@
   </style>
 </head>
 <body>
-<h1>Toko Links 25/8 - v1</h1>
+<h1>Toko Links 25/8 - v1.1</h1>
   <div class="button-container">
     
     <a href="https://www.google.com" class="button">DeepLink for Android</a>
@@ -46,7 +46,13 @@
   </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+//      window.addEventListener('load', function() {
+//             // This code waits for all external resources (images, CSS, etc.) to load.
+//     console.log('Page and all assets are fully loaded.');
+// });
+           
+    //document.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('load', function() {
             // Check if the user agent string contains "Android"
             const isAndroid = /android/i.test(navigator.userAgent);
             const googleLink = 'https://tokopedia.link/6Eal7jYt0Vb';
@@ -56,10 +62,9 @@
                 window.location.href = googleLink;
             }
             
-            window.location.href = googleLink;
             // 1. Get the button element using its ID
             //const buttonElement = document.getElementById('iosButton');
-            //autoTapButton('iosButton')
+            autoTapButton('iosButton')
             // Optional: Define the action that should happen when clicked
             // buttonElement.addEventListener('click', function() {
             //     const messageElement = document.getElementById('message');
