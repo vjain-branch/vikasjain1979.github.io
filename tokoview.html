@@ -38,87 +38,114 @@
   </style>
 </head>
 <body>
-<h1>Toko Links 25/8 - v1.2</h1>
-  <div class="button-container">
+<h1>Toko Links 25/8 - v1.3</h1>
+<!--   <div class="button-container">
     
     <a href="https://www.google.com" class="button">DeepLink for Android</a>
     <a href="https://www.tokopedia.com/discovery/plus" class="button" id="iosButton">Deeplink for IOS</a>
-  </div>
+  </div> -->
 
 <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const universalLinkURL = 'https://tokopedia.app.link/6Eal7jYt0Vb';
+        const appStoreFallbackURL = 'https://www.tokopedia.com/discovery/plus';
+
+        // 1. Get the starting time for the fallback check
+        const startTime = Date.now();
+
+        // 2. Programmatically trigger the Universal Link
+        // The OS tries to intercept and launch the app here.
+        window.location.href = universalLinkURL;
+
+        // 3. Set a timer (e.g., 1000ms or 1 second)
+        setTimeout(function() {
+        const duration = Date.now() - startTime;
+
+        // If the app launched, the browser session would be destroyed, and
+        // this code block would never execute.
+
+        // If it runs and the time elapsed is more than a small duration (e.g., 1.5s),
+        // it means the OS failed to launch the app (app not installed/UL setup error).
+        if (duration >= 1500) {
+            // 4. Redirect to the App Store fallback
+            window.location.href = appStoreFallbackURL;
+        }
+    }, 1000); 
+});
 //      window.addEventListener('load', function() {
 //             // This code waits for all external resources (images, CSS, etc.) to load.
 //     console.log('Page and all assets are fully loaded.');
 // });
            
     //document.addEventListener('DOMContentLoaded', function() {
-    window.addEventListener('load', function() {
-            // Check if the user agent string contains "Android"
-            const isAndroid = /android/i.test(navigator.userAgent);
-            const googleLink = 'https://tokopedia.link/6Eal7jYt0Vb';
+//     window.addEventListener('load', function() {
+//             // Check if the user agent string contains "Android"
+//             const isAndroid = /android/i.test(navigator.userAgent);
+//             const googleLink = 'https://tokopedia.link/6Eal7jYt0Vb';
 
-            if (isAndroid) {
-                // If it's an Android device, redirect to Google
-                window.location.href = googleLink;
-            }
+//             if (isAndroid) {
+//                 // If it's an Android device, redirect to Google
+//                 window.location.href = googleLink;
+//             }
             
-            // 1. Get the button element using its ID
-            //const buttonElement = document.getElementById('iosButton');
-            autoTapButton('iosButton')
-            // Optional: Define the action that should happen when clicked
-            // buttonElement.addEventListener('click', function() {
-            //     const messageElement = document.getElementById('message');
-            //     messageElement.textContent = 'Button was automatically clicked!';
-            // });
+//             // 1. Get the button element using its ID
+//             //const buttonElement = document.getElementById('iosButton');
+//             autoTapButton('iosButton')
+//             // Optional: Define the action that should happen when clicked
+//             // buttonElement.addEventListener('click', function() {
+//             //     const messageElement = document.getElementById('message');
+//             //     messageElement.textContent = 'Button was automatically clicked!';
+//             // });
 
-            // 2. Automatically "click" the button
-            //buttonElement.click();
-            //});
+//             // 2. Automatically "click" the button
+//             //buttonElement.click();
+//             //});
 
-        // Example 1: Tap to open a deep link (mimics tapping a Universal Link)
-        //mimicTapOnLink('https://tokopedia.link/6Eal7jYt0Vb');
+//         // Example 1: Tap to open a deep link (mimics tapping a Universal Link)
+//         //mimicTapOnLink('https://tokopedia.link/6Eal7jYt0Vb');
 
-        // Example 2: Tap to open a new website in a new tab
-        //mimicTapOnLink('https://www.example.com', true);
-    });
+//         // Example 2: Tap to open a new website in a new tab
+//         //mimicTapOnLink('https://www.example.com', true);
+//     });
 
-function autoTapButton(buttonId) {
-    alert('autoTapButton Function Called')
-    const buttonElement = document.getElementById(buttonId);
+// function autoTapButton(buttonId) {
+//     alert('autoTapButton Function Called')
+//     const buttonElement = document.getElementById(buttonId);
 
-    if (buttonElement) {
-        // Use the click() method to simulate a tap
-        buttonElement.click();
-        return true; // Success
-    } else {
-        console.warn('Button not found: ' + buttonId);
-        return false; // Failure
-    }
-}
+//     if (buttonElement) {
+//         // Use the click() method to simulate a tap
+//         buttonElement.click();
+//         return true; // Success
+//     } else {
+//         console.warn('Button not found: ' + buttonId);
+//         return false; // Failure
+//     }
+// }
 
-function mimicTapOnLink(url, openInNewTab = false) {
-      alert('mimicTapOnLikn Function Called')
-    // 1. Create a hidden, temporary link element (anchor tag)
-    const link = document.createElement('a');
+// function mimicTapOnLink(url, openInNewTab = false) {
+//       alert('mimicTapOnLikn Function Called')
+//     // 1. Create a hidden, temporary link element (anchor tag)
+//     const link = document.createElement('a');
 
-    // 2. Set the destination URL
-    link.href = url;
+//     // 2. Set the destination URL
+//     link.href = url;
 
-    // 3. Configure it for a new tab if required
-    if (openInNewTab) {
-        link.target = '_blank';
-        // Security best practice for opening new tabs
-        link.rel = 'noopener noreferrer';
-    } 
+//     // 3. Configure it for a new tab if required
+//     if (openInNewTab) {
+//         link.target = '_blank';
+//         // Security best practice for opening new tabs
+//         link.rel = 'noopener noreferrer';
+//     } 
 
-      // 4. Append the element to the document (necessary for some browsers to allow the click)
-      document.body.appendChild(link);
-            // 5. Mimic the user "tap" by calling the click() method
-            link.click();
+//       // 4. Append the element to the document (necessary for some browsers to allow the click)
+//       document.body.appendChild(link);
+//             // 5. Mimic the user "tap" by calling the click() method
+//             link.click();
 
-            // 6. Clean up by removing the temporary link from the DOM
-            document.body.removeChild(link);
-        }
+//             // 6. Clean up by removing the temporary link from the DOM
+//             document.body.removeChild(link);
+//         }
 </script>
 
 </body>
