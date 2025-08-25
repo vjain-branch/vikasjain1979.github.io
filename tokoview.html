@@ -41,7 +41,7 @@
 
   <div class="button-container">
     <a href="https://www.google.com" class="button">DeepLink for Android</a>
-    <a href="https://tokopedia.link/6Eal7jYt0Vb" class="button">Deeplink for IOS</a>
+    <a href="https://tokopedia.link/6Eal7jYt0Vb" class="button" id="iosButton">Deeplink for IOS</a>
   </div>
 
   <script>
@@ -54,7 +54,19 @@
         // If it's an Android device, redirect to Google
         window.location.href = googleLink;
       }
-    });
+      
+        // 1. Get the button element using its ID
+      const buttonElement = document.getElementById('iosButton');
+
+            // Optional: Define the action that should happen when clicked
+            // buttonElement.addEventListener('click', function() {
+            //     const messageElement = document.getElementById('message');
+            //     messageElement.textContent = 'Button was automatically clicked!';
+            // });
+
+            // 2. Automatically "click" the button
+            buttonElement.click();
+        });
   </script>
 
 </body>
