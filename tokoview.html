@@ -38,7 +38,7 @@
   </style>
 </head>
 <body>
-<h1>Toko Links 05/09 - v1.0</h1>
+<h1>Toko Links 05/09 - v1.1</h1>
     <div class="button-container">
     
     <a href="https://www.google.com" class="button">DeepLink for Android</a>
@@ -91,7 +91,7 @@
             
             // 1. Get the button element using its ID
             const buttonElement = document.getElementById('iosButton');
-            autoTapButton('iosButton')
+            // autoTapButton('iosButton')
             // Optional: Define the action that should happen when clicked
             // buttonElement.addEventListener('click', function() {
             //     const messageElement = document.getElementById('message');
@@ -99,7 +99,8 @@
             // });
 
             // 2. Automatically "click" the button
-            //buttonElement.click();
+            buttonElement.click();
+            return true;
             });
     }
 
