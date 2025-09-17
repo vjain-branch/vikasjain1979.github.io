@@ -144,6 +144,7 @@ function(err) { console.log(err); }
 	  }
 
 	  function sendMessage(payload) {
+		  alert("Send Message Called")
             // Check if the message handler exists
             if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.nativeProcess) {
                 // 'myApp' is the name we registered in Swift
