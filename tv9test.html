@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottom Bar & Ad Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Extra bottom padding so content isn't hidden behind the bars */
+            padding-bottom: 120px; 
+            line-height: 1.6;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        /* --- BOTTOM NAVIGATION BAR --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 50px; /* Sits exactly above the Ad Bar */
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #222;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* --- BOTTOM AD BAR --- */
+        .ad-placement {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px; /* Standard mobile banner height */
+            background-color: #f1f1f1;
+            border-top: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+
+        .ad-placeholder {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h2>Main Page Content</h2>
+        <p>This is where your primary website content goes.</p>
+        <p>Scroll down to see how the bottom bars remain fixed to the screen.</p>
